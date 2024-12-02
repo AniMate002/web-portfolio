@@ -1,5 +1,4 @@
 import React, { useLayoutEffect } from 'react'
-import MainBorder from './components/mainBorder'
 import Title from './components/Title'
 import Navigation from './components/Navigation'
 import Quote from './components/Quote'
