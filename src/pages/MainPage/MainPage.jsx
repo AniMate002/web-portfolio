@@ -6,6 +6,7 @@ import RightBottom from './components/RightBottom'
 import GifFace from './components/GifFace'
 import { Outlet } from 'react-router'
 import { gsap } from 'gsap/gsap-core'
+import BlurryCursor from './Cursor'
 
 
 
@@ -19,6 +20,7 @@ const MainPage = () => {
         <RightBottom />
         <Outlet />
         <GifFace />
+        <BlurryCursor />
       </div>
     )
 }
