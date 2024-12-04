@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router'
 import MainPage from './pages/MainPage/MainPage'
 import Home from './pages/Home/Home'
 import MainLoadingPage from './pages/MainLoadingPage/MainLoadingPage'
+import Gradient from './pages/Gradient/Gradient'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
     <MainLoadingPage />
+    <Gradient />
       <Routes>
         <Route path='/' element={<MainPage />}> //THIS IS LIKE AN INTERFACE
           <Route index element={<Home />}/>

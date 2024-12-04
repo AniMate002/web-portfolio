@@ -1,0 +1,117 @@
+:root{
+    /**/
+    /*other default setting ...*/
+    /**/
+      --secondary-glow: conic-gradient(
+        from 10deg at 50% 50%,
+        #4e4e4e 0deg,
+        #929292 55deg,
+        #3d3d3d 120deg,
+        #313131 160deg,
+        transparent 360deg
+      );
+    
+      --third-glow: conic-gradient(
+        from 90deg at 50% 50%,
+        #4e4e4e 0deg,
+        #929292 55deg,
+        #3d3d3d 120deg,
+        #313131 160deg,
+        transparent 360deg
+      );
+}
+
+.main-gradient{
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40vh 0 0 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+    
+}
+
+
+.gradient-main-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family:'Prospect';
+  font-size:3rem;
+}
+
+.main-gradient::before,
+.main-gradient::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  opacity:0.8
+}
+
+.main-gradient::before {
+  background: var(--third-glow);
+  border-radius: 50%;
+  width: 50vw;
+  height: 10vw;
+  margin-left: -200px;
+  filter:blur(90px);  
+  top: calc(40vh);
+  left: calc(60vw );
+}
+
+.main-gradient::after {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 500px;
+  height: 700px;
+  filter:blur(90px);
+  top: calc(50vh - 50vw/2);
+  left: calc(50vw - 50vw/2);
+}
+
+
+@keyframes animateBefore {
+  0% {
+    transform: translateY(0);
+    opacity: 0.1;
+  }
+  25%{
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(200px) scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes animateAfter{
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-250px) scale(1.2);
+
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.main-gradient::before {
+  /*...previous props*/
+  animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+.main-gradient::after {
+  /*...previous props*/
+  animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+*{
+  scroll-behavior: smooth;
+}
+
 .ubuntu-light {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
