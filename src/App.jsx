@@ -6,6 +6,7 @@ import MainPage from './pages/MainPage/MainPage'
 import Home from './pages/Home/Home'
 import MainLoadingPage from './pages/MainLoadingPage/MainLoadingPage'
 import Gradient from './pages/Gradient/Gradient'
+import About from './pages/About/About'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,12 +30,13 @@ function App() {
   }, [])
 
   return (
-    <div className='select-none'>
+    <div className='select-none overflow-hidden'>
     <MainLoadingPage />
     <Gradient />
       <Routes>
         <Route path='/' element={<MainPage />}> //THIS IS LIKE AN INTERFACE
           <Route index element={<Home />}/>
+          <Route path='/about' element={<About />} />
           {/* HERE WILL ROUTES: ABOUT, MAIN HOME, CONTACTS */}
           {/* ROUTE "PROJECTS" WILL BE IN A SEPERATE ROUTE */}
         </Route>

@@ -35,6 +35,7 @@ const Navigation = () => {
       width: `${rect.width + 40}px`, // Устанавливаем ширину на основе размеров элемента
       height: "70px",
       duration: 0.1,
+      backgroundColor: "#E3E3E3"
     });
   
     gsap.to(e.target, {
@@ -45,8 +46,9 @@ const Navigation = () => {
   const handleNavigationMouseLeave = (e) => {
     gsap.to("#custom-cursor", {
       borderRadius: "100%",
-      width: "30px",
-      height: "30px",
+      backgroundColor: "transparent",
+      width: "20px",
+      height: "20px",
       duration: 0.1,
     })
     if(!e.target.className.includes("nav-btn-2")){
@@ -65,11 +67,11 @@ const Navigation = () => {
     //     <button className='font-bold tracking-tighter text-sm'>Hire me</button>
     // </div>
 
-    <div className='w-[600px] mt-40 oswald-font text-5xl relative'>
+    <div className='w-[600px] mt-40 oswald-font text-5xl relative z-50'>
         <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-0 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>hire me</button>
         <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-1 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>contacts</button>
         <NavLink onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} to={'/'} className={({isActive}) => `nav-btn cursor-none nav-btn-2 relative z-30 w-fit uppercase opacity-[1] drop-shadow-2xl drop-shadow-white block ${isActive ? "text-white" : "text-white"}`}>/home</NavLink>
-        <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-3 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>about</button>
+        <NavLink onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} to={'/about'} className='nav-btn cursor-none nav-btn-3 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>about</NavLink>
         <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-4 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>projects</button>
 
         {/* <div className='absolute top-1/2 left-[-40px] w-[200px] h-[50px] bg-white blur-xl z-[0] opacity-[0.5]'></div> */}
