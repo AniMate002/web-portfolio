@@ -1,11 +1,18 @@
 import React, { useLayoutEffect } from 'react'
 import { gsap } from 'gsap/gsap-core'
-import { NavLink } from 'react-router'
+import { NavLink, useLocation, useNavigate } from 'react-router'
 import { PowerGlitch } from 'powerglitch'
+
+
+
 
 
 const Navigation = () => {
   const NavAppearTimeLine = gsap.timeline({delay: 3, repeat: 0})
+  const navigate = useNavigate()
+  const location = useLocation()
+
+
 
 
   useLayoutEffect(() => {
@@ -58,6 +65,26 @@ const Navigation = () => {
     }
   }
 
+  const handleNavigate = (to) => {
+    gsap.to("#custom-cursor", {
+      width:"200vw",
+      height: "200vh",
+      duration: 0.5,
+      opacity: 1,
+      onComplete: () => {
+        navigate(to)
+        gsap.to("#custom-cursor", {
+          width: "30px",
+          height: "30px",
+          duration: 0,
+        })
+      }
+    })
+  
+  }
+
+
+
   return (
     // <div className='flex flex-col gap-2 items-start mt-14'>
     //     <button className='font-bold tracking-tighter text-sm'>Home</button>
@@ -68,10 +95,11 @@ const Navigation = () => {
     // </div>
 
     <div className='w-[600px] mt-40 oswald-font text-5xl relative z-50'>
+      {/* <h2>{location.pathname}</h2> */}
         <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-0 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>hire me</button>
         <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-1 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>contacts</button>
-        <NavLink onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} to={'/'} className={({isActive}) => `nav-btn cursor-none nav-btn-2 relative z-30 w-fit uppercase opacity-[1] drop-shadow-2xl drop-shadow-white block ${isActive ? "text-white" : "text-white"}`}>/home</NavLink>
-        <NavLink onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} to={'/about'} className='nav-btn cursor-none nav-btn-3 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>about</NavLink>
+        <button onClick={() => handleNavigate("/")} onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className={`nav-btn cursor-none nav-btn-1 relative z-30 uppercase block text-left w-fit  opacity-[0.2]`}>/home</button>
+        <button onClick={() => handleNavigate("/about")} onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave}  className='nav-btn cursor-none nav-btn-3 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>about</button>
         <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-4 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>projects</button>
 
         {/* <div className='absolute top-1/2 left-[-40px] w-[200px] h-[50px] bg-white blur-xl z-[0] opacity-[0.5]'></div> */}

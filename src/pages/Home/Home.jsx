@@ -4,7 +4,7 @@ import { gsap } from 'gsap/gsap-core'
 import { PowerGlitch } from 'powerglitch'
 import RunningLine from './components/RunningLine'
 
-export const HomePageTimeLine = gsap.timeline({delay: 3})
+const HomePageTimeLine = gsap.timeline({delay: 3})
 const Home = () => {
     useLayoutEffect(() => {
         PowerGlitch.glitch("#home-page-girl-face", {
@@ -34,10 +34,10 @@ const Home = () => {
     const handleGirlMouseLeave = () => {
       gsap.to("#custom-cursor", {
         borderRadius: "100%",
-        width: "30px",
-        height: "30px",
-        background: "#27272a",
-        duration: 0.2
+        backgroundColor: "transparent",
+        width: "20px",
+        height: "20px",
+        duration: 0.1,
       })
     }
 

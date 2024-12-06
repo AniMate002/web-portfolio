@@ -1,16 +1,20 @@
 import React, { useLayoutEffect } from 'react'
 import { PowerGlitch } from 'powerglitch'
 import { gsap } from "gsap";
+import { useLocation } from 'react-router';
 
 const MainLoadingPage = () => {
+    const location = useLocation()
 
     useLayoutEffect(() => {
         PowerGlitch.glitch("#glitch-production-loading")
+        gsap.set("#main-loading-page", { display: "flex", opacity: 1});
+        gsap.set("#fading-name-loading", { opacity: 1});
         let tm1 = gsap.timeline({delay: 1})
         tm1.to("#fading-name-loading", {opacity: 0, duration: 1})
         tm1.to("#main-loading-page", {opacity:0, duration: 1})
-        tm1.to("#main-loading-page", {display: "none", delay: 1})
-    }, [])
+        tm1.set("#main-loading-page", {display: "none"})
+    }, [location.pathname])
 
     return (
         <div id='main-loading-page' className='w-[100vw] h-[100vh] z-[100] bg-gradient-to-br from-[#0D0D0D] to-black absolute flex items-center justify-center'>
