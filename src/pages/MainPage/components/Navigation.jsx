@@ -1,111 +1,142 @@
-import React, { useLayoutEffect } from 'react'
-import { gsap } from 'gsap/gsap-core'
-import { NavLink, useLocation, useNavigate } from 'react-router'
-import { PowerGlitch } from 'powerglitch'
-
-
-
-
+import React, { useEffect, useLayoutEffect } from 'react';
+import { gsap } from 'gsap';
+import { useLocation, useNavigate } from 'react-router';
+import { PowerGlitch } from 'powerglitch';
+import { showLoadingPage } from '../../MainLoadingPage/MainLoadingPage';
 
 const Navigation = () => {
-  const NavAppearTimeLine = gsap.timeline({delay: 3, repeat: 0})
-  const navigate = useNavigate()
-  const location = useLocation()
+  const NavAppearTimeLine = gsap.timeline({ delay: 3, repeat: 0 });
+  const navigate = useNavigate();
+  const location = useLocation();
 
-
-
+  const normalizeNavString = target => "/" + target.innerText.replace(" ", "-").trim().toLowerCase().replace("home", "")
 
   useLayoutEffect(() => {
-    PowerGlitch.glitch(".nav-btn", {
-      playMode: "hover"
-    })
+    PowerGlitch.glitch('.nav-btn', {
+      playMode: 'hover',
+    });
 
     for (let i = 0; i <= 4; i++) {
       NavAppearTimeLine.fromTo(
         `.nav-btn-${i}`,
-        { marginLeft: "-300px" },
+        { marginLeft: '-300px' },
         {
           marginLeft: 0,
           duration: 0.6,
-          ease: "power1.inOut",
+          ease: 'power1.inOut',
         },
         `-=${0.5}`
       );
     }
-    
-  }, [])
+  }, []);
 
-  const handleNavigationMouseEneter = (e) => {
+  useEffect(() => {
+    for(let i = 0; i <= 4; i++){
+      const currNav = document.querySelector(`.nav-btn-${i}`)
+      if(isActive(normalizeNavString(currNav))){
+        gsap.set(currNav, {opacity: 1})
+      }else{
+        gsap.set(currNav, { opacity: 0.2})
+      }
+    }
+  }, [location.pathname])
+
+  const handleNavigationMouseEnter = (e) => {
     const rect = e.target.getBoundingClientRect();
-    gsap.to("#custom-cursor", {
-      borderRadius: "10px",
-      width: `${rect.width + 40}px`, // Устанавливаем ширину на основе размеров элемента
-      height: "70px",
+    gsap.to('#custom-cursor', {
+      borderRadius: '10px',
+      width: `${rect.width + 40}px`,
+      height: '70px',
       duration: 0.1,
-      backgroundColor: "#E3E3E3"
+      backgroundColor: '#E3E3E3',
     });
-  
+
     gsap.to(e.target, {
       opacity: 1,
     });
   };
 
   const handleNavigationMouseLeave = (e) => {
-    gsap.to("#custom-cursor", {
-      borderRadius: "100%",
-      backgroundColor: "transparent",
-      width: "20px",
-      height: "20px",
+    gsap.to('#custom-cursor', {
+      borderRadius: '100%',
+      backgroundColor: 'transparent',
+      width: '20px',
+      height: '20px',
       duration: 0.1,
-    })
-    if(!e.target.className.includes("nav-btn-2")){
+    });
+
+    if (!isActive(normalizeNavString(e.target))) {
+      // alert("/" + e.target.innerText.replace(" ", "-").trim().replace("home", "").toLowerCase())
       gsap.to(e.target, {
-        opacity: 0.2
-      })
+        opacity: 0.2,
+      });
+    }else{
+      gsap.to(e.target, {
+        opacity: 1,
+      });
     }
-  }
+  };
 
   const handleNavigate = (to) => {
-    gsap.to("#custom-cursor", {
-      width:"200vw",
-      height: "200vh",
-      duration: 0.5,
-      opacity: 1,
-      onComplete: () => {
-        navigate(to)
-        gsap.to("#custom-cursor", {
-          width: "30px",
-          height: "30px",
-          duration: 0,
-        })
-      }
-    })
-  
-  }
+    if (location.pathname !== to) showLoadingPage(() => navigate(to));
+  };
 
-
+  const isActive = (path) => location.pathname === path;
 
   return (
-    // <div className='flex flex-col gap-2 items-start mt-14'>
-    //     <button className='font-bold tracking-tighter text-sm'>Home</button>
-    //     <button className='font-bold tracking-tighter text-sm'>About</button>
-    //     <button className='font-bold tracking-tighter text-sm'>Projects</button>
-    //     <button className='font-bold tracking-tighter text-sm'>Contacts</button>
-    //     <button className='font-bold tracking-tighter text-sm'>Hire me</button>
-    // </div>
-
-    <div className='w-[600px] mt-40 oswald-font text-5xl relative z-50'>
-      {/* <h2>{location.pathname}</h2> */}
-        <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-0 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>hire me</button>
-        <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-1 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>contacts</button>
-        <button onClick={() => handleNavigate("/")} onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className={`nav-btn cursor-none nav-btn-1 relative z-30 uppercase block text-left w-fit  opacity-[0.2]`}>/home</button>
-        <button onClick={() => handleNavigate("/about")} onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave}  className='nav-btn cursor-none nav-btn-3 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>about</button>
-        <button onMouseEnter={handleNavigationMouseEneter} onMouseLeave={handleNavigationMouseLeave} className='nav-btn cursor-none nav-btn-4 relative z-30 uppercase block text-left w-fit  opacity-[0.2]'>projects</button>
-
-        {/* <div className='absolute top-1/2 left-[-40px] w-[200px] h-[50px] bg-white blur-xl z-[0] opacity-[0.5]'></div> */}
-
+    <div className="w-[600px] mt-40 oswald-font text-5xl relative z-50">
+      <button
+        onMouseEnter={handleNavigationMouseEnter}
+        onMouseLeave={handleNavigationMouseLeave}
+        onClick={() => handleNavigate('/hire-me')}
+        className={`nav-btn nav-btn-0 cursor-none relative z-30 uppercase block text-left w-fit ${
+          isActive('/hire-me') ? 'opacity-[1]' : 'opacity-[0.2]'
+        }`}
+      >
+        Hire Me
+      </button>
+      <button
+        onMouseEnter={handleNavigationMouseEnter}
+        onMouseLeave={handleNavigationMouseLeave}
+        onClick={() => handleNavigate('/contacts')}
+        className={`nav-btn nav-btn-1 cursor-none relative z-30 uppercase block text-left w-fit ${
+          isActive('/contacts') ? 'opacity-[1]' : 'opacity-[0.2]'
+        }`}
+      >
+        Contacts
+      </button>
+      <button
+        onMouseEnter={handleNavigationMouseEnter}
+        onMouseLeave={handleNavigationMouseLeave}
+        onClick={() => handleNavigate('/')}
+        className={`nav-btn nav-btn-2 cursor-none relative z-30 uppercase block text-left w-fit ${
+          isActive('/') ? 'opacity-[1]' : 'opacity-[0.2]'
+        }`}
+      >
+        Home
+      </button>
+      <button
+        onMouseEnter={handleNavigationMouseEnter}
+        onMouseLeave={handleNavigationMouseLeave}
+        onClick={() => handleNavigate('/about')}
+        className={`nav-btn nav-btn-3 cursor-none relative z-30 uppercase block text-left w-fit ${
+          isActive('/about') ? 'opacity-[1]' : 'opacity-[0.2]'
+        }`}
+      >
+        About
+      </button>
+      <button
+        onMouseEnter={handleNavigationMouseEnter}
+        onMouseLeave={handleNavigationMouseLeave}
+        onClick={() => handleNavigate('/projects')}
+        className={`nav-btn nav-btn-4 cursor-none relative z-30 uppercase block text-left w-fit ${
+          isActive('/projects') ? 'opacity-[1]' : 'opacity-[0.2]'
+        }`}
+      >
+        Projects
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

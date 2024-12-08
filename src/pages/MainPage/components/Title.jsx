@@ -3,8 +3,8 @@ import React from 'react'
 const Title = () => {
   return (
     <div className='relative'>
-        <p className='text-white oswald-font text-xl'>Made by Kiryl Shauchenka</p>
-        <p className='absolute text-white oswald-font text-xl top-2 left-2 opacity-[50%] '>Made by Kiryl Shauchenka</p>
+        <p className='text-white  text-sm opacity-[0.8]'>Made by Kiryl Shauchenka</p>
+        <p className='absolute text-white text-sm top-1 left-1 opacity-[30%] whitespace-nowrap'>Made by Kiryl Shauchenka</p>
     </div>
   )
 }
