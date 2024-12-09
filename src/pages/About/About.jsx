@@ -105,9 +105,6 @@ const About = () => {
             width: "50px",
             height: "50px",
             duration: 0.3,
-            onComplete: () => {
-                // document.getElementById("custom-cursor").innerText = "+"
-            }
         });
     };
 
@@ -133,7 +130,7 @@ const About = () => {
         }, "0")
         .to("#about-wawing-lines", {
             x: -400,
-            y: -100,
+            y: -150,
             width: 300
         }, "0.2")
         .to("#about-about-word", {

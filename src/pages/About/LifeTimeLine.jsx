@@ -48,7 +48,7 @@ export const showLifeTimeLine = () => {
 
 const LifeTimeLine = () => {
   return (
-    <div id='about-life-time-line-container' className='w-[55%] relative mt-48 hidden opacity-[0.5]'>
+    <div id='about-life-time-line-container' className='w-[55%] absolute hidden opacity-[0.5] top-[75%]'>
         <div id='about-life-time-line' className='w-[0%] bg-[#c0c0c0] h-[2px] flex items-center'>
             <div className='about-life-time-dot about-life-time-dot-0 rounded-full block w-[10px] h-[10px] opacity-0 bg-[#cacaca]'></div>
             <div className='about-life-time-dot about-life-time-dot-1 rounded-full block w-[10px] h-[10px] opacity-0 bg-[#cacaca] ml-[15%]'></div>
