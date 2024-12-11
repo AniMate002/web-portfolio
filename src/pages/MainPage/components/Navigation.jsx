@@ -84,7 +84,7 @@ const Navigation = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="w-[600px] mt-40 oswald-font text-5xl relative z-50">
+    <div className="w-[600px] mt-40 oswald-font text-5xl relative z-50 w-fit">
       <button
         onMouseEnter={handleNavigationMouseEnter}
         onMouseLeave={handleNavigationMouseLeave}

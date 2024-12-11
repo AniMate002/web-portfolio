@@ -8,6 +8,7 @@ import MainLoadingPage from './pages/MainLoadingPage/MainLoadingPage'
 import Gradient from './pages/Gradient/Gradient'
 import About from './pages/About/About'
 import Contacts from './pages/Contacts/Contacts'
+import Projects from './pages/Projects/Projects'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,8 +38,9 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage />}> //THIS IS LIKE AN INTERFACE
           <Route index element={<Home />}/>
-          <Route path='/about' element={<About />} />
-          <Route path='/contacts' element={<Contacts />} />
+          <Route index path='/about' element={<About />} />
+          <Route index path='/contacts' element={<Contacts />} />
+          <Route index path='/projects' element={<Projects />} />
           {/* HERE WILL ROUTES: ABOUT, MAIN HOME, CONTACTS */}
           {/* ROUTE "PROJECTS" WILL BE IN A SEPERATE ROUTE */}
         </Route>

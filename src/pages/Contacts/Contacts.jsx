@@ -29,7 +29,7 @@ const Contacts = () => {
             })
         }
         gsap.to(e.target, {
-            opacity: 0.2,
+            opacity: 0.3,
             scale: 1
         })
         gsap.to("#custom-cursor", {
@@ -43,16 +43,16 @@ const Contacts = () => {
             <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjd6MHV1emVzNWlidWQ5a3A5bXVkNTNycXBramg0NWdzcGJ4ZjM4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SNeZeuwlDrryu152pH/giphy.webp" />
             
             <div className='absolute bottom-[100px] flex gap-8'>
-                <NavLink onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.5] h-[50px] flex items-center justify-center" target='_blank' to={"https://github.com/AniMate002"}>
+                <NavLink onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.3] h-[50px] flex items-center justify-center" target='_blank' to={"https://github.com/AniMate002"}>
                     GITHUB
                 </NavLink>
-                <NavLink onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.5] h-[50px] flex items-center justify-center" target='_blank' to={"https://www.linkedin.com/in/kirill-shauchenka-356802296/"}>
+                <NavLink onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.3] h-[50px] flex items-center justify-center" target='_blank' to={"https://www.linkedin.com/in/kirill-shauchenka-356802296/"}>
                     LINKEDIN
                 </NavLink>
-                <NavLink onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.5] h-[50px] flex items-center justify-center" target='_blank' to={"https://t.me/soda_lakerino_002"}>
+                <NavLink onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.3] h-[50px] flex items-center justify-center" target='_blank' to={"https://t.me/soda_lakerino_002"}>
                     TELEGRAM
                 </NavLink>
-                <p onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.5] h-[50px] flex items-center justify-center" >
+                <p onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.3] h-[50px] flex items-center justify-center" >
                     EMAIL
                 </p>
             </div>
