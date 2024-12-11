@@ -1,5 +1,5 @@
 import React from 'react'
-import SingleLeftSlide from './SIngleLeftSlide'
+import SingleLeftSlide from './SingleLeftSlide'
 
 const LeftSlider = ({projects, setActiveSlider}) => {
     const renderedSlides = projects.map(project => <SingleLeftSlide setActiveSlider={setActiveSlider} key={project.id} {...project}/>)
