@@ -18,6 +18,7 @@ const Contacts = () => {
 
         gsap.to("#custom-cursor", {
             opacity: 0,
+            scale: 2,
             duration: 0.2
         })
     }
@@ -34,7 +35,8 @@ const Contacts = () => {
         })
         gsap.to("#custom-cursor", {
             opacity: 1,
-            duration: 0.2
+            duration: 0.2,
+            scale: 1
         })
     }
 

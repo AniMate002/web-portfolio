@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap/gsap-core';
 
-const SingleLeftSlide = ({ id, image, name, setActiveSlider }) => {
+const SingleLeftSlide = ({ id, image, name, setActiveSlider, setShowDetail }) => {
   const slideRef = useRef();
 
   useLayoutEffect(() => {
@@ -27,6 +27,11 @@ const SingleLeftSlide = ({ id, image, name, setActiveSlider }) => {
         scale: 1.05
     })
 
+    gsap.to("#custom-cursor", {
+      backgroundColor: "grey",
+      width: "30px",
+      height: "30px"
+    })
 
   }
 
@@ -37,10 +42,22 @@ const SingleLeftSlide = ({ id, image, name, setActiveSlider }) => {
         ease: "power2.inOut",
         scale: 1
     })
+
+    gsap.to("#custom-cursor", {
+      backgroundColor: "transparent",
+      width: "20px",
+      height: "20px"
+    })
+
+  }
+
+  const hadleSliderClick = () => {
+    setShowDetail(prev => !prev)
   }
 
   return (
     <div 
+        onClick={hadleSliderClick}
         onMouseEnter={handleSlideMouseEnter} 
         onMouseLeave={handleSlideMouseLeave} 
         ref={slideRef} 
