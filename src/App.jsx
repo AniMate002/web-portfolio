@@ -9,6 +9,7 @@ import Gradient from './pages/Gradient/Gradient'
 import About from './pages/About/About'
 import Contacts from './pages/Contacts/Contacts'
 import Projects from './pages/Projects/Projects'
+import HireMe from './pages/HireMe/HireMe'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +42,7 @@ function App() {
           <Route index path='/about' element={<About />} />
           <Route index path='/contacts' element={<Contacts />} />
           <Route index path='/projects' element={<Projects />} />
+          <Route index path='/hire-me' element={<HireMe />}/>
           {/* HERE WILL ROUTES: ABOUT, MAIN HOME, CONTACTS */}
           {/* ROUTE "PROJECTS" WILL BE IN A SEPERATE ROUTE */}
         </Route>
