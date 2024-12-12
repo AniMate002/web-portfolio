@@ -93,11 +93,17 @@ const RightSmallDetail = ({projects, activeSlider, setShowDetail, showDetail}) =
                     onMouseLeave={animateButtonMouseLeaveOpacity}
                     id='projects-info-button'
                     onClick={handleClickInfo}
+                    style={{
+                        boxShadow: "0px 0px 40px 2px rgba(49, 49, 60, 1)"
+                    }}
                     className='uppercase flex items-center justify-center opacity-[0.3] bg-[#2F2F2F] rounded-xl w-[100px] h-[40px] absolute bottom-[-80px] left-[43%] translate-x-[-50%]'>info</button>
                 <Link
                     onMouseEnter={animateButtonHoverOpacity}
                     onMouseLeave={animateButtonMouseLeaveOpacity}
                     id='projects-visit-button'
+                    style={{
+                        boxShadow: "0px 0px 40px 2px rgba(49, 49, 60, 1)"
+                    }}
                     target='_blank' 
                     to={projects[activeSlider - 1].link} 
                     className='uppercase flex items-center justify-center opacity-[0.3] bg-[#2F2F2F] rounded-xl w-[100px] h-[40px] absolute bottom-[-80px] left-[56%] translate-x-[-50%]'>visit</Link>

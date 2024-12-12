@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap/gsap-core';
 
-const SingleLeftSlide = ({ id, image, name, setActiveSlider, setShowDetail }) => {
+const SingleLeftProjectSlide = ({ id, image, name, type, setActiveSlider, setShowDetail }) => {
   const slideRef = useRef();
 
   useLayoutEffect(() => {
@@ -68,8 +68,9 @@ const SingleLeftSlide = ({ id, image, name, setActiveSlider, setShowDetail }) =>
         <img src={image} className="w-[320px] custom-shadow" />
       </div>
       <p className="mt-2 uppercase opacity-[0.5]">{name}</p>
+      <p className='text-sm opacity-[1]'>#{type}</p>
     </div>
   );
 };
 
-export default SingleLeftSlide;
+export default SingleLeftProjectSlide;

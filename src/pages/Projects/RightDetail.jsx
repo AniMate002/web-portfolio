@@ -8,7 +8,7 @@ export const animateButtonHoverOpacity = (e) => {
     gsap.to(e.target, {
         opacity: 0.8,
         scale: 1.05,
-        ease: "power1.out"
+        ease: "power1.out",
     })
 
     gsap.to("#custom-cursor", {

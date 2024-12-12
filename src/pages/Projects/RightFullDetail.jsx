@@ -42,6 +42,26 @@ const RightFullDetail = ({activeProject, showDetail, setShowDetail}) => {
 
     return (
         <div id='full-detail-container' className='mt-8 w-[700px] mx-auto hidden'>
+            <div id='full-detail-buttons' className='flex items-center justify-start w-full gap-4 opacity-0'>
+                <button
+                    onClick={() => setShowDetail(false)}
+                    onMouseEnter={animateButtonHoverOpacity}
+                    onMouseLeave={animateButtonMouseLeaveOpacity}
+                    style={{
+                        boxShadow: "0px 0px 40px 2px rgba(49, 49, 60, 1)"
+                    }}
+                    className='uppercase flex items-center justify-center opacity-[0.3] bg-[#2F2F2F] rounded-xl w-[50%] mx-auto mb-4 h-[40px] '>return</button>
+                <Link
+                    onMouseEnter={animateButtonHoverOpacity}
+                    onMouseLeave={animateButtonMouseLeaveOpacity}
+                    style={{
+                        boxShadow: "0px 0px 40px 2px rgba(49, 49, 60, 1)"
+                    }}
+                    target='_blank' 
+                    to={activeProject.link} 
+                    className='uppercase flex items-center justify-center opacity-[0.3] bg-[#2F2F2F] rounded-xl w-[50%] mx-auto mb-4 h-[40px] '>visit</Link>
+
+            </div>
                 <p id='full-detail-codename' className='w-fit block uppercase opacity-0'><span className='opacity-[0.2]'>codename:</span> {activeProject.name}</p>
                 <p id='full-detail-type' className='w-fit block uppercase opacity-0'><span className='opacity-[0.2]'>type:</span> {activeProject.type}</p>
             <p id='full-detail-technologies' className='w-fit flex uppercase items-baseline gap-2 opacity-0'>
@@ -51,20 +71,6 @@ const RightFullDetail = ({activeProject, showDetail, setShowDetail}) => {
                 </div>
             </p>
 
-            <div id='full-detail-buttons' className='flex items-center justify-start w-full gap-4 opacity-0'>
-                <Link
-                    onMouseEnter={animateButtonHoverOpacity}
-                    onMouseLeave={animateButtonMouseLeaveOpacity}
-                    target='_blank' 
-                    to={activeProject.link} 
-                    className='uppercase flex items-center justify-center opacity-[0.3] bg-[#2F2F2F] rounded-xl w-[100px] mx-auto mt-2 h-[40px] '>visit</Link>
-                <button
-                    onClick={() => setShowDetail(false)}
-                    onMouseEnter={animateButtonHoverOpacity}
-                    onMouseLeave={animateButtonMouseLeaveOpacity}
-                    className='uppercase flex items-center justify-center opacity-[0.3] bg-[#2F2F2F] rounded-xl w-[100px] mx-auto mt-2 h-[40px] '>return</button>
-
-            </div>
             <p id='full-detail-description' className='flex flex-col gap-4 text-sm mt-4 opacity-[0]'>
                 {renderedDescription}
             </p>
