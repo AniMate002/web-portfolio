@@ -45,10 +45,10 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage />}> //THIS IS LIKE AN INTERFACE
           <Route index element={<Home />}/>
-          <Route index path='/about' element={<About />} />
-          <Route index path='/contacts' element={<Contacts />} />
-          <Route index path='/projects' element={<Projects />} />
-          <Route index path='/hire-me' element={<HireMe />}/>
+          <Route  path='/about' element={<About />} />
+          <Route  path='/contacts' element={<Contacts />} />
+          <Route  path='/projects' element={<Projects />} />
+          <Route exac path='/hire-me' element={<HireMe />}/>
           {/* HERE WILL ROUTES: ABOUT, MAIN HOME, CONTACTS */}
           {/* ROUTE "PROJECTS" WILL BE IN A SEPERATE ROUTE */}
         </Route>
