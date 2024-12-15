@@ -15,12 +15,12 @@ const RunningLine = () => {
         })
     }, [])
     return (
-        <div className='w-screen px-[30px] mt-20 overflow-hidden '>
-            <div className='w-full bg-white h-[4px]'></div>
+        <div className='w-screen px-[30px] absolute bottom-36 overflow-hidden hidden 2xl:block'>
+            <div className='w-full bg-white h-[4px] relative z-10'></div>
             <div id='running-line' className='flex gap-14 uppercase text-xl items-center justify-start whitespace-nowrap relative'>
                 {[...Array(12)].map(el => <span>h<span className='relative z-30'>ope n</span><span className='relative z-30'>e</span>wl<span className='relative z-30'>y</span> di<span className='relative z-30'>es</span></span>)}
             </div>
-            <div className='w-full bg-white h-[4px]'></div>
+            <div className='w-full bg-white h-[4px] relative z-10'></div>
         </div>
     )
 }

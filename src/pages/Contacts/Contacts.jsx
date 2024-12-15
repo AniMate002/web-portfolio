@@ -42,9 +42,9 @@ const Contacts = () => {
 
     return (
         <div className='absolute w-screen h-screen overflow-hidden top-0 left-0 flex items-center justify-center'>
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjd6MHV1emVzNWlidWQ5a3A5bXVkNTNycXBramg0NWdzcGJ4ZjM4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SNeZeuwlDrryu152pH/giphy.webp" />
+            <img className='lg:w-auto w-[270px] relative z-10' src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjd6MHV1emVzNWlidWQ5a3A5bXVkNTNycXBramg0NWdzcGJ4ZjM4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SNeZeuwlDrryu152pH/giphy.webp" />
             
-            <div className='absolute bottom-[100px] flex gap-8'>
+            <div className='absolute lg:bottom-[100px] bottom-[200px] flex lg:gap-8 gap-2 lg:text-base text-[12px] z-20'>
                 <NavLink onMouseEnter={handleNavLinkMouseEnter} onMouseLeave={handleNavLinkMouseLeave} className="opacity-[0.3] h-[50px] flex items-center justify-center" target='_blank' to={"https://github.com/AniMate002"}>
                     GITHUB
                 </NavLink>

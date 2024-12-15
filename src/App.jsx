@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { Route, Routes } from 'react-router'
 import MainPage from './pages/MainPage/MainPage'
 import Home from './pages/Home/Home'
@@ -10,6 +8,14 @@ import About from './pages/About/About'
 import Contacts from './pages/Contacts/Contacts'
 import Projects from './pages/Projects/Projects'
 import HireMe from './pages/HireMe/HireMe'
+import { gsap } from 'gsap/gsap-core'
+
+gsap.config({
+  nullTargetWarn: false,
+  force3D: true,
+  autoSleep: true,
+  autoKillThreshold: true
+})
 
 function App() {
   const [count, setCount] = useState(0)

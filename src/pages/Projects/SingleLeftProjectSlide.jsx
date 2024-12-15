@@ -63,12 +63,12 @@ const SingleLeftProjectSlide = ({ id, image, name, type, setActiveSlider, setSho
         ref={slideRef} 
         className="flex items-end flex-col py-4 "
     >
-      <div className="flex items-start gap-4">
-        <p className="uppercase opacity-[0.5]">#0{id}</p>
-        <img src={image} className="w-[320px] custom-shadow" />
+      <div className="flex items-start sm:gap-4 gap-2">
+        <p className="uppercase opacity-[0.5] sm:text-base text-sm">#0{id}</p>
+        <img src={image} className="xl:w-[230px] sm:w-[300px] w-[100px] custom-shadow 2xl:w-[320px]" />
       </div>
-      <p className="mt-2 uppercase opacity-[0.5]">{name}</p>
-      <p className='text-sm opacity-[1]'>#{type}</p>
+      <p className="mt-2 uppercase opacity-[0.5] sm:text-base text-sm">{name}</p>
+      <p className='sm:text-sm text-[10px] opacity-[1]'>#{type}</p>
     </div>
   );
 };

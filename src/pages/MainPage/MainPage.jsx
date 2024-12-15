@@ -13,7 +13,7 @@ import BlurryCursor from './Cursor'
 const MainPage = () => {
 
     return (
-      <div className='relative w-[100vw] h-[100vh] bg-black outline outline-offset-[-30px] outline-3 outline-white p-[70px] text-white montserrat-font'>
+      <div className='relative w-[100vw] h-[100vh] bg-black outline md:outline-offset-[-30px] outline-offset-[-10px] outline-3 outline-white p-[20px] md:p-[70px] text-white montserrat-font'>
         <Title />
         <Navigation />
         <Quote />

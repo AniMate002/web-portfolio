@@ -73,9 +73,9 @@ const Home = () => {
 
     return (
         <div className='text-white flex w-full items-center justify-center flex-col'>
-            <img id='home-page-shader-gif' className='absolute z-20 top-0 h-full p-[30px] opacity-0' src='https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm90ajh1bm41Nnpwd2V1MTg0NW5hZ2IyOTl1M3MwaGx1d3djOHR6byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/T5tnw3xsSagXhUrSKD/giphy.gif'/>
-            <img onClick={handleGirlClick} onMouseEnter={handleGirlMouseEnter} onMouseLeave={handleGirlMouseLeave} id='home-page-girl-face' src={GirlImg} className='w-[300px] mt-[-20vh] opacity-0 border-4 border-white relative z-50'/>
-            <div id='home-girl-backside' className='absolute w-[450px] h-[540px] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-54%] z-40 bg-[#1c1c1c] opacity-0'></div>
+            <img id='home-page-shader-gif' className='hidden lg:block absolute z-30 top-0 h-full p-[30px] opacity-0 ' src='https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm90ajh1bm41Nnpwd2V1MTg0NW5hZ2IyOTl1M3MwaGx1d3djOHR6byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/T5tnw3xsSagXhUrSKD/giphy.gif'/>
+            <img onClick={handleGirlClick} onMouseEnter={handleGirlMouseEnter} onMouseLeave={handleGirlMouseLeave} id='home-page-girl-face' src={GirlImg} className='w-[200px] lg:w-[300px] absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] opacity-0 border-4 border-white z-50'/>
+            {/* <div id='home-girl-backside' className='hidden lg:block absolute w-[450px] h-[540px] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-54%] z-40 bg-[#1c1c1c] opacity-0'></div> */}
             <RunningLine />
             <BlurCard />
         </div>

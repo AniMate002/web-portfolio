@@ -168,16 +168,16 @@ const About = () => {
     } 
 
     return (
-        <div className="absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] flex items-center justify-center flex-col h-screen z-40 w-[100%] overflow-hidden">
+        <div className="absolute xl:top-1/2 left-1/2 xl:translate-y-[-50%] top-[-100px] translate-x-[-50%] flex items-center justify-center flex-col h-screen z-40 w-[100%] overflow-hidden">
             <img
                 id="about-wawing-lines"
-                className="w-[550px]"
+                className="w-[100px] xl:w-[550px]"
                 src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnV2NGcyYXlndThsa3hrdDRzandjNGt6NDhuZzVwZ2FrZ2Y3cW56OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/idMwEqDdwBGS3XCXNa/giphy.webp"
             />
             <div className="absolute">
                 <h2 
                     id="about-about-word"
-                    className="uppercase text-6xl top-2 left-16 relative"
+                    className="uppercase text-lg xl:text-6xl xl:top-2 xl:left-16 relative"
                 >About
                 <div 
                     id="about-about-word-underline"
@@ -188,16 +188,16 @@ const About = () => {
                     onMouseEnter={handleGifFaceMouseEnter}
                     onMouseLeave={handleGifFaceMouseLeave}
                     id="gif-spinning-head"
-                    className="w-[200px] relative -top-2 left-0"
+                    className="w-[200px] relative -top-2 left-0 hidden xl:block"
                     src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmNjb253NXd2b21qOTZ5d2luM2ozYnhoeDc0cmo1MGhyczRnc2piNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/38xX65HgCGMPpZMTyc/giphy.webp"
                 />
                 <p 
                     id="about-me-word"
-                    className="uppercase text-4xl relative -top-44 left-44"
+                    className="uppercase xl:text-4xl relative -top-44 left-44 hidden xl:block"
                 >me</p>
                 <p 
                     id="about-main-text"
-                    className="w-[600px] h-[0px] overflow-y-auto absolute left-[60px] top-0 text-[#616161] no-scrollbar"
+                    className="md:w-[400px] w-[250px] xl:h-[0px] h-[250px] md:h-[500px] overflow-y-auto absolute xl:left-[60px] left-[-120%] md:left-[-170%] xl:top-0 top-[50px] text-[#616161] no-scrollbar xl:text-base md:text-sm text-[10px]"
                     >
                     Hi, I’m Kiryl Shauchenka, a 20-year-old <span className="about-highlight-word">Full-Stack Developer</span> passionate about crafting dynamic and immersive web applications. With a strong foundation in both front-end and back-end development, I specialize in building scalable, efficient, and user-friendly solutions that bridge functionality with design.
                     <div className="m-10"></div>
@@ -208,12 +208,12 @@ const About = () => {
                     <span className="about-highlight-word">Let’s connect</span> and collaborate to create something amazing!
                 </p>
             </div>
-            <p id="about-short-main-text" className="text-center">
+            <p id="about-short-main-text" className="text-center hidden xl:block">
                 Hi, My name is Kiryl Shauchenka. I’m a creative full-stack developer passionate about crafting immersive
                 web experiences.
             </p>
 
-            <div>
+            <div className="hidden xl:block">
                 {floatingWordsArray.map((word) => (
                     <p
                         key={word.id}

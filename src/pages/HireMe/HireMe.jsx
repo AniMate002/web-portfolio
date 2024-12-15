@@ -49,8 +49,9 @@ const HireMe = () => {
                 onComplete: () => gsap.set("#hire-me-curved-text", {display: "none"})
             }, "0")
             .to("#hire-me-sphere", {
-                y: -150
-            })
+                y: -100,
+                scale: 0.6
+            }, "0.1")
             .to(["#hire-me-number", "#hire-me-email"], {
                 opacity: 1,
                 stagger: 0.2
@@ -76,7 +77,7 @@ const HireMe = () => {
 
     const handleSphereMouseEnter = () => {
         gsap.to("#hire-me-sphere", {
-            scale: 1.2,
+            scale: 0.8,
             ease: "power1.out"
         })
 
@@ -107,13 +108,13 @@ const HireMe = () => {
     return (
         <div
             style={{ perspective: "800px" }}
-            className='absolute left-0 top-0 w-screen h-screen flex items-center justify-center flex-col'>
+            className='absolute left-0 top-0 w-screen h-screen flex items-center justify-center flex-col z-10'>
             <img 
                 id="hire-me-sphere"
                 onClick={handleClickSphere}
                 onMouseEnter={handleSphereMouseEnter}
                 onMouseLeave={handleSphereMouseLeave}
-                className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-20'
+                className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] z-20 w-[80%] sm:w-auto'
                 src='https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWt2N2UybHF6a3MxOXhwdXJjdG1ocWVqdmYwMTN2b3QybzUxYmptdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnHN9JLODvS1fr2/giphy.webp'/>
             <div 
                 id="hire-me-curved-text"
@@ -131,7 +132,7 @@ const HireMe = () => {
                 <p id='hire-me-number' className='opacity-0'><span className='opacity-[0.2]'>Call me:</span> <span className='opacity-[0.5]'>+48 451 188 044</span></p>
                 <p id='hire-me-email' className='opacity-0'><span className='opacity-[0.2]'>Email:</span> <span className='opacity-[0.5]'>kirill1974111@gmail.com</span></p>
             </p>
-            <p className='absolute w-screen bottom-[100px] text-center opacity-[0.5]'>Let’s build something extraordinary. Web-development, modern designs, and innovative solutions tailored just for you.</p>
+        <p className='absolute bottom-[120px] text-center opacity-[0.5] md:text-base text-[12px] z-20 w-[80%]'>Let’s build something extraordinary. Web-development, modern designs, and innovative solutions tailored just for you.</p>
         </div>
     )
 }

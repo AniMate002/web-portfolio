@@ -68,7 +68,7 @@ const RightSmallDetail = ({projects, activeSlider, setShowDetail, showDetail}) =
         setShowDetail(true)
     }
   return (
-    <div id='projects-right-info-container' style={{ perspective: "800px" }} className='flex flex-row items-center justify-center w-full mt-[50px]'>
+    <div id='projects-right-info-container' style={{ perspective: "800px" }} className='flex flex-row items-center justify-center w-full mt-[50px] '>
         {/* RIGHT TEXT */}
         <p
             id="projects-right-name"
@@ -76,18 +76,18 @@ const RightSmallDetail = ({projects, activeSlider, setShowDetail, showDetail}) =
                 transform: "rotate3d(0, 1, 0, 40deg)",
                 textShadow: "0px -5px 100px white"
             }}
-            className='relative z-40 w-[20%] flex-shrink-0 text-4xl ubuntu-bold uppercase'
+            className='relative z-40 w-[15%] flex-shrink-0 text-4xl ubuntu-bold uppercase '
         ></p>
 
         {/* RIGHT IMAGE */}
         <div
             id="projects-right-image-container" 
-            className='flex items-center justify-center w-[900px] h-[500px] relative z-30 ml-[-200px]'
+            className='flex items-center justify-center w-[900px] h-[500px] relative z-30 ml-[-200px] '
             style={{
                 transform: "rotate3d(0, 1, 0, -20deg)",
             }}
         >
-            <div style={{backgroundColor: "rgba(47, 47, 47, 0.3)"}} className='absolute left-0 top-0 w-full h-full'>
+            <div style={{backgroundColor: "rgba(47, 47, 47, 0.3)"}} className='absolute left-0 top-0 w-full h-full '>
                 <button
                     onMouseEnter={animateButtonHoverOpacity}
                     onMouseLeave={animateButtonMouseLeaveOpacity}

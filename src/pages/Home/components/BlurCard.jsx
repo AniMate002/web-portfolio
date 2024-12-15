@@ -72,14 +72,14 @@ const BlurCard = () => {
             onMouseEnter={handleBlurCardMouseEnter} 
             onMouseLeave={handleBlurCardMouseLeave}
             id='home-girl-backside' 
-            className='absolute w-[450px] h-[540px] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-54%] z-40 bg-[#1c1c1c] opacity-0 hidden'>
+            className='absolute sm:w-[450px] lg:h-[540px] w-[260px] pb-4 lg:pb-0  top-[60%] md:top-1/2 left-1/2 translate-x-[-50%] translate-y-[-54%] z-40 bg-[#1c1c1c] opacity-0 hidden md:text-base text-[12px]'>
 
             <p className='p-4'><span className='opacity-[0.2]'>Common Stats:</span> Skills and Focus</p>
             <div className='px-4 flex flex-col gap-4'>
                 { renderedStats }
             </div>
 
-            <p className='px-4 mt-6 mb-2'><span className='opacity-[0.2]'>Unique Stats:</span> Only numbers</p>
+            <p className='px-4 mt-6 mb-2'><span className='opacity-[0.2]'>Unique Stats:</span> Some numbers</p>
             <div className='flex flex-col gap-2'>
                 { renderedStatsNumbers }
             </div>

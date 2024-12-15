@@ -40,7 +40,7 @@ const RightDetail = ({ projects, activeSlider, showDetail, setShowDetail }) => {
     const activeProject = projects[activeSlider - 1]
 
     return (
-        <div className='flex-grow w-full h-full overflow-y-auto pb-4 overflow-x-clip no-scrollbar'>
+        <div className='flex-grow w-full h-full overflow-y-auto pb-4 overflow-x-clip no-scrollbar hidden xl:block'>
             <p className='uppercase tracking-widest mt-[12px]'>PROJECTS</p>
             <p className='uppercase oswald-font tracking-widest text-sm opacity-[0.5]'>{projects.length} items</p>
 
